@@ -1,0 +1,25 @@
+{
+  "name": "ez-ladder-syntax",
+  "displayName": "EZ-Ladder-Syntax",
+  "description": "Syntax highlighting for EZ Ladder structured text.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ezladder",
+      "aliases": ["EZ Ladder ST", "ezladder"],
+      "extensions": [".txt"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ezladder",
+      "scopeName": "source.ezladder",
+      "path": "./syntaxes/ezladder.tmLanguage.json"
+    }]
+  }
+}
