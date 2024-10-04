@@ -1,0 +1,37 @@
+{
+    "If Statement": {
+      "prefix": "if",
+      "body": [
+        "IF ${1:condition} THEN",
+        "\t$0",
+        "END_IF;"
+      ],
+      "description": "If...THEN...END_IF statement"
+    },
+    "For Loop": {
+      "prefix": "for",
+      "body": [
+        "FOR ${1:i} := ${2:0} TO ${3:10} DO",
+        "\t$0",
+        "END_FOR;"
+      ],
+      "description": "For loop"
+    },
+    "Function Definition": {
+      "prefix": "func",
+      "body": [
+        "FUNCTION ${1:FunctionName} : ${2:ReturnType}",
+        "\tVAR_INPUT",
+        "\t\t${3:param} : ${4:Type};",
+        "\tEND_VAR",
+        "\tVAR_OUTPUT",
+        "\t\t${5:output} : ${6:Type};",
+        "\tEND_VAR",
+        "BEGIN",
+        "\t$0",
+        "END_FUNCTION"
+      ],
+      "description": "Function definition"
+    }
+  }
+  

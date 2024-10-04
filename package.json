@@ -1,8 +1,9 @@
 {
   "name": "ez-ladder-syntax",
-  "displayName": "EZ-Ladder-Syntax",
-  "description": "Syntax highlighting for EZ Ladder structured text.",
-  "version": "0.0.1",
+  "displayName": "EZ Ladder Syntax",
+  "description": "Syntax highlighting for EZ Ladder Structured Text (ST).",
+  "version": "1.0.0",
+  "publisher": "AmbitiousApprentice",
   "engines": {
     "vscode": "^1.94.0"
   },
@@ -10,16 +11,29 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "ezladder",
-      "aliases": ["EZ Ladder ST", "ezladder"],
-      "extensions": [".txt"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "ezladder",
-      "scopeName": "source.ezladder",
-      "path": "./syntaxes/ezladder.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "ezladder",
+        "aliases": ["EZ Ladder ST", "ezladder"],
+        "extensions": [".ezladder"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ezladder",
+        "scopeName": "source.ezladder",
+        "path": "./syntaxes/ezladder.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "vscode": "^1.1.37",
+    "vscode-textmate": "^5.0.0"
   }
 }
