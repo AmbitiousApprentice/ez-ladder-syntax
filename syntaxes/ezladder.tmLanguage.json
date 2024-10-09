@@ -13,6 +13,9 @@
 		"include": "#keywords"
 	  },
 	  {
+		"include": "#data-types"
+	  },
+	  {
 		"include": "#operators"
 	  },
 	  {
@@ -66,10 +69,19 @@
 		"patterns": [
 		  {
 			"name": "keyword.control.ezladder",
-			"match": "\\b(IF|THEN|ELSE|FOR|WHILE|DO|END_IF|END_FOR|END_WHILE|FUNCTION|FUNCTION_BLOCK|VAR|VAR_INPUT|VAR_OUTPUT|VAR_EXTERNAL|VAR_TEMP|CONST|TYPE|END_TYPE)\\b"
+			"match": "\\b(IF|THEN|ELSE|FOR|WHILE|DO|END_IF|END_FOR|END_WHILE|FUNCTION|FUNCTION_BLOCK|VAR|VAR_INPUT|VAR_OUTPUT|VAR_EXTERNAL|VAR_TEMP|END_VAR|CONST|TYPE|END_TYPE)\\b"
 		  }
 		]
 	  },
+	  "data-types": {
+      "patterns": [
+        {
+          "name": "storage.type.ezladder",
+          "match": "\\b(BOOL|INT|DINT|UDINT|USINT|REAL|STRING)\\b"
+        }
+      ]
+      },
+
 	  "operators": {
 		"patterns": [
 		  {
@@ -83,14 +95,6 @@
 		  {
 			"name": "support.function.builtin.ezladder",
 			"match": "\\b(ABS|MAX|MIN|LN|EXP|SIN|COS|CONCAT|LEFT|RIGHT|LEN|INT_TO_STRING|REAL_TO_INT|STRING_TO_INT)\\b"
-		  }
-		]
-	  },
-	  "variables-outputs": {
-		"patterns": [
-		  {
-			"name": "variable.output.ezladder",
-			"match": "\\b(M\\d+|L\\d+|Flt)\\b"
 		  }
 		]
 	  },

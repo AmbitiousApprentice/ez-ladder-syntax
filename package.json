@@ -14,8 +14,13 @@
     "languages": [
       {
         "id": "ezladder",
-        "aliases": ["EZ Ladder ST", "ezladder"],
-        "extensions": [".ezladder"],
+        "aliases": [
+          "EZ Ladder ST",
+          "ezladder"
+        ],
+        "extensions": [
+          ".txt"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -28,12 +33,8 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./"
   },
   "devDependencies": {
-    "typescript": "^4.0.0",
-    "vscode": "^1.1.37",
-    "vscode-textmate": "^5.0.0"
+    "vscode": "^1.1.34"
   }
 }
