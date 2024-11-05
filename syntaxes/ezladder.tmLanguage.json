@@ -19,6 +19,9 @@
 		"include": "#operators"
 	  },
 	  {
+		"include": "#assignment"
+	  },
+	  {
 		"include": "#built-in-functions"
 	  },
 	  {
@@ -69,7 +72,7 @@
 		"patterns": [
 		  {
 			"name": "keyword.control.ezladder",
-			"match": "\\b(IF|THEN|ELSE|FOR|WHILE|DO|END_IF|END_FOR|END_WHILE|FUNCTION|FUNCTION_BLOCK|VAR|VAR_INPUT|VAR_OUTPUT|VAR_EXTERNAL|VAR_TEMP|END_VAR|CONST|TYPE|END_TYPE|END_FUNCTION|END_FUNCTION_BLOCK)\\b"
+			"match": "\\b(IF|THEN|ELSE|FOR|WHILE|DO|END_IF|END_FOR|END_WHILE|FUNCTION|FUNCTION_BLOCK|VAR|VAR_INPUT|VAR_OUTPUT|VAR_EXTERNAL|VAR_TEMP|END_VAR|CONST|TYPE|END_TYPE|END_FUNCTION)\\b"
 		  }
 		]
 	  },
@@ -86,6 +89,14 @@
 		  {
 			"name": "keyword.operator.ezladder",
 			"match": "(\\+|\\-|\\*|\\/|AND\\b|OR\\b|NOT\\b|XOR\\b|<>|<=|>=|<|>|=)"
+		  }
+		]
+	  },
+	  "assignment": {
+		"patterns": [
+		  {
+			"name": "keyword.operator.assignment.ezladder",
+			"match": ":="
 		  }
 		]
 	  },
@@ -141,7 +152,7 @@
 		"patterns": [
 		  {
 			"name": "variable.other.ezladder",
-			"match": "\\b(?!0x[0-9A-Fa-f]+|0b[01]+|\\d+\\.\\d+|\\d+)\\w+\\b"
+			"match": "\\b(?!0x[0-9A-Fa-f]+|0b[01]+|\\d+\\.\\d+|\\d+)\\w+\b"
 		  }
 		]
 	  }
