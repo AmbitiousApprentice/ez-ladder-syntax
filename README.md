@@ -1,65 +1,84 @@
-# ez-ladder-syntax README
+# EZ Ladder ST Extension for VS Code
 
-This is the README for your extension "ez-ladder-syntax". After writing up a brief description, we recommend including the following sections.
+Welcome to the **EZ Ladder Structured Text (ST) Extension** for Visual Studio Code! This extension provides syntax highlighting, IntelliSense, and other essential tools for working with EZ Ladder ST, which is based on Pascal but includes specific differences tailored for EZ Ladder programming. This extension will make writing, debugging, and navigating EZ Ladder code more efficient and enjoyable.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Syntax Highlighting**: Provides complete syntax highlighting for EZ Ladder ST, including:
+  - Keywords (`IF`, `THEN`, `ELSE`, etc.)
+  - Data Types (`BOOL`, `REAL`, `INT`, etc.)
+  - Operators (`+`, `-`, `/`, `AND`, `OR`, etc.)
+  - Assignment Operators (`:=`)
+  - Built-in Functions (`ABS`, `MAX`, `MIN`, etc.)
+  - Comments, Strings, Constants, and Custom Data Types
 
-For example if there is an image subfolder under your extension project workspace:
+- **IntelliSense**: Autocomplete suggestions for common EZ Ladder keywords, functions, and data types, providing a more productive coding experience.
 
-\!\[feature X\]\(images/feature-x.png\)
+- **Custom Highlighting for Operators**: Special color highlighting for assignment (`:=`) operator to make code clearer and more readable.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Supports `.ezl` Files**: Automatically associates `.ezl` files with the EZ Ladder language mode for easy usage.
 
-## Requirements
+## Installation
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+To use this extension locally:
 
-## Extension Settings
+1. **Package the Extension**:
+   - Run `vsce package` in your extension folder to create a `.vsix` file.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+2. **Install the Extension**:
+   - Open VS Code and go to the Extensions pane.
+   - Click the three dots (`...`) in the top right and choose "Install from VSIX...".
+   - Select the `.vsix` file to install.
 
-For example:
+## Usage
 
-This extension contributes the following settings:
+Once installed, open any `.ezl` file in VS Code to start using the extension. You will see:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- **Syntax Highlighting** for EZ Ladder ST code.
+- **IntelliSense Suggestions** as you type keywords, functions, and other EZ Ladder-specific code elements.
 
-## Known Issues
+## Language Support
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+This extension adds support for the following features:
+
+- **Keywords**: Control flow statements like `IF`, `FOR`, `WHILE`, and more.
+- **Data Types**: Native data types such as `BOOL`, `INT`, `REAL`, `STRING`, etc.
+- **Built-in Functions**: Common functions such as `ABS`, `MIN`, `MAX`, `SIN`, etc.
+- **Assignment Operator**: Custom coloring for the `:=` operator to help differentiate assignment from other operations.
+- **Comments and Strings**: Proper highlighting for block comments (`(* ... *)`) and string literals.
+
+## Contributing
+
+Feel free to submit issues or pull requests on the [GitHub repository](#) to contribute to the development of the EZ Ladder ST extension.
+
+### Development Setup
+
+- Clone the repository.
+- Run `npm install` to install dependencies.
+- Make changes and use `vsce package` to generate the updated `.vsix` file.
+
+### Known Issues
+
+- Syntax coloring may conflict with certain VS Code themes, like Monokai. Consider customizing your theme's settings for the best experience.
+- IntelliSense is currently limited to basic keywords and functions. Full language server support is planned for future releases.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
+- Initial release with syntax highlighting and basic IntelliSense.
+- Custom color highlighting for assignment operators.
+- Support for `.ezl` file association.
 
-Initial release of ...
+### 1.1.0 (Planned)
+- Enhanced IntelliSense with function argument hints.
+- Basic error checking for common mistakes in EZ Ladder ST.
 
-### 1.0.1
+## Feedback
 
-Fixed issue #.
+Your feedback is very valuable! Feel free to [open an issue](#) with your suggestions, bug reports, or feature requests.
 
-### 1.1.0
+## License
 
-Added features X, Y, and Z.
+This extension is licensed under the [MIT License](#).
 
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Enjoy coding with EZ Ladder ST!
