@@ -22,7 +22,7 @@
 		"include": "#built-in-functions"
 	  },
 	  {
-		"include": "#variables-outputs"
+		"include": "#variables"
 	  },
 	  {
 		"include": "#constants"
@@ -59,7 +59,7 @@
 			"patterns": [
 			  {
 				"name": "constant.character.escape.ezladder",
-				"match": "\\\\."
+				"match": "\\."
 			  }
 			]
 		  }
@@ -69,19 +69,18 @@
 		"patterns": [
 		  {
 			"name": "keyword.control.ezladder",
-			"match": "\\b(IF|THEN|ELSE|FOR|WHILE|DO|END_IF|END_FOR|END_WHILE|FUNCTION|FUNCTION_BLOCK|VAR|VAR_INPUT|VAR_OUTPUT|VAR_EXTERNAL|VAR_TEMP|END_VAR|CONST|TYPE|END_TYPE)\\b"
+			"match": "\\b(IF|THEN|ELSE|FOR|WHILE|DO|END_IF|END_FOR|END_WHILE|FUNCTION|FUNCTION_BLOCK|VAR|VAR_INPUT|VAR_OUTPUT|VAR_EXTERNAL|VAR_TEMP|END_VAR|CONST|TYPE|END_TYPE|END_FUNCTION|END_FUNCTION_BLOCK)\\b"
 		  }
 		]
 	  },
 	  "data-types": {
-      "patterns": [
-        {
-          "name": "storage.type.ezladder",
-          "match": "\\b(BOOL|INT|DINT|UDINT|USINT|REAL|STRING)\\b"
-        }
-      ]
-      },
-
+		"patterns": [
+		  {
+			"name": "storage.type.ezladder",
+			"match": "\\b(BOOL|INT|DINT|UDINT|USINT|REAL|STRING|PARAM|ARRAY|OF)\\b"
+		  }
+		]
+	  },
 	  "operators": {
 		"patterns": [
 		  {
@@ -94,7 +93,7 @@
 		"patterns": [
 		  {
 			"name": "support.function.builtin.ezladder",
-			"match": "\\b(ABS|MAX|MIN|LN|EXP|SIN|COS|CONCAT|LEFT|RIGHT|LEN|INT_TO_STRING|REAL_TO_INT|STRING_TO_INT)\\b"
+			"match": "\\b(ABS|ACOS|ASIN|ATAN|CEIL|EXP|EXPT|FLOOR|LN|LOG|MAX|MIN|SQRT|SIN|TAN|TRUNC|CONCAT|DELETE|FIND|INSERT|LEFT|LEN|REPLACE|RIGHT|BYTE_TO_DINT|BYTE_TO_DWORD|BYTE_TO_INT|BYTE_TO_LINT|BYTE_TO_LREAL|BYTE_TO_LWORD|BYTE_TO_REAL|BYTE_TO_SINT|BYTE_TO_UDINT|BYTE_TO_UINT|BYTE_TO_ULINT|BYTE_TO_USINT|BYTE_TO_WORD|DINT_TO_BYTE|DINT_TO_DWORD|DINT_TO_INT|DINT_TO_LINT|DINT_TO_LREAL|DINT_TO_LWORD|DINT_TO_REAL|DINT_TO_SINT|DINT_TO_UDINT|DINT_TO_UINT|DINT_TO_ULINT|DINT_TO_USINT|DINT_TO_WORD|DWORD_TO_BYTE|DWORD_TO_DINT|DWORD_TO_INT|DWORD_TO_LINT|DWORD_TO_LREAL|DWORD_TO_LWORD|DWORD_TO_REAL|DWORD_TO_SINT|DWORD_TO_UDINT|DWORD_TO_UINT|DWORD_TO_ULINT|DWORD_TO_USINT|DWORD_TO_WORD|BIT_PACK|BIT_UNPACK|LSB_TO_ARRAY|MSB_TO_ARRAY|MUX|AVG|DRUM_SEQ|LIMIT|MOD|RANDOM|REAL|ROL|ROR|SHL|SHR)\\b"
 		  }
 		]
 	  },
@@ -118,7 +117,7 @@
 		  },
 		  {
 			"name": "keyword.declaration.ezladder",
-			"match": "\\b(struct|end_struct|RECORD|END_RECORD)\\b"
+			"match": "\\b(struct|end_struct)\\b"
 		  },
 		  {
 			"name": "variable.member.ezladder",
@@ -130,15 +129,22 @@
 		"patterns": [
 		  {
 			"name": "entity.name.function.ezladder",
-			"match": "\\b(FUNCTION|END_FUNCTION|FUNCTION_BLOCK|END_FUNCTION_BLOCK)\\b"
+			"match": "\\b(FUNCTION|FUNCTION_BLOCK|entity.name.function.ezladder)\\b"
 		  },
 		  {
 			"name": "meta.function-call.ezladder",
 			"match": "\\b\\w+(?=\\()"
 		  }
 		]
+	  },
+	  "variables": {
+		"patterns": [
+		  {
+			"name": "variable.other.ezladder",
+			"match": "\\b(?!0x[0-9A-Fa-f]+|0b[01]+|\\d+\\.\\d+|\\d+)\\w+\\b"
+		  }
+		]
 	  }
 	},
 	"injectionSelector": "L:source.ezladder"
   }
-  
